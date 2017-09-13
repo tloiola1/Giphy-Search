@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy Gifs</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="gif"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+  var keyWord = "minions cher chering 11sBLVxNs7v6WA";
+
+
+
+
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q="+keyWord+"&api_key=cb22a3ba10b7457ba0fd5c446850c598";
+
+    //cb22a3ba10b7457ba0fd5c446850c598
+      var gi = $("<iframe>");
+      gi.attr("src", "https://giphy.com/embed/MwOuiiTfWfWgM")
+      $("#gif").html(gi);
+
+
+    // Step 3: using the same logic, fill in the third row
+  </script>
+</body>
+
+</html>

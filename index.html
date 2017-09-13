@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giphy Search</title>
+</head>
+<body>
+	
+	<video id="gif" autoplay="true" loop="true"></video>
+	<input type="search" id="search">
+	<input type="submit" value="send" id="btn">
+	<div id="urlLink"></div>
+
+	<script src="assets/javascript/giphy.js"></script>
+	<script src="assets/javascript/config.js"></script>
+
+	<script type="text/javascript">
+		
+	document.getElementById("btn").addEventListener("click", function(){
+		
+		var keyword = document.getElementById("search").value;
+
+		Giphy.getUrlAsync(keyword,function(videoURL){
+			document.getElementById("gif").src = videoURL;
+
+			console.log(videoURL);
+		})
+	});
+
+
+	</script>
+</body>
+</html>

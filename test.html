@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Single AJAX</title>
+</head>
+
+<body>
+<div class="movie"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+    var title = "avatar";
+    var plot = "short";
+    var queryURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=" + plot + "&apikey=40e9cece";
+   
+
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      console.log(response);
+      console.log(response.Runtime);
+      var img = $("<img>");
+      img.attr("src", response.Poster);
+      $(".movie").append(img);
+    });
+// ---------------------------------------------------------
+    console.log("This console.log will probably happen first because of asynchronicity.");
+  </script>
+
+</body>
+
+</html>
